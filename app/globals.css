@@ -37,38 +37,38 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #1a1a1a;
+  background: #1a1a2e;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #00ff00;
+  background: #ff1493;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #00cc00;
+  background: #ff69b4;
 }
 
 /* Selection styling */
 ::selection {
-  background-color: #00ff00;
-  color: #0a0a0a;
+  background-color: #ff1493;
+  color: #ffffff;
 }
 
 ::-moz-selection {
-  background-color: #00ff00;
-  color: #0a0a0a;
+  background-color: #ff1493;
+  color: #ffffff;
 }
 
 /* Link styling */
 a {
-  color: #00ff00;
+  color: #00d4ff;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 a:hover {
-  color: #00cc00;
+  color: #00f0ff;
 }
 
 /* Button styling */
@@ -92,7 +92,7 @@ button:active {
 input,
 textarea,
 select {
-  background-color: #1a1a1a;
+  background-color: #1a1a2e;
   color: #ffffff;
   border: 1px solid #333333;
   border-radius: 4px;
@@ -105,8 +105,8 @@ input:focus,
 textarea:focus,
 select:focus {
   outline: none;
-  border-color: #00ff00;
-  box-shadow: 0 0 0 2px rgba(0, 255, 0, 0.1);
+  border-color: #ff1493;
+  box-shadow: 0 0 0 2px rgba(255, 20, 147, 0.1);
 }
 
 /* Image optimization */
@@ -143,4 +143,12 @@ img {
 
 .animate-fadeIn {
   animation: fadeIn 0.3s ease-in;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #ff1493 0%, #00d4ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }

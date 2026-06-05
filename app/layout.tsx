@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import AgeGateModal from '@/components/AgeGateModal';
 
 export const metadata: Metadata = {
   title: 'Erogram | Best NSFW Telegram Groups, Bots & AI Tools Directory',
@@ -28,6 +29,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body className="bg-dark text-white">
+        <AgeGateModal />
         <Header />
         <main className="min-h-screen pb-20">
           {children}

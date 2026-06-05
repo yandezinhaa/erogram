@@ -7,11 +7,11 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-dark border-b border-gray-800">
+    <header className="sticky top-0 z-40 bg-dark border-b border-gray-800">
       <nav className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="text-2xl font-bold text-primary hover:text-green-400 transition">
-          EROgram
+        <Link href="/" className="text-2xl font-bold text-white hover:text-primary transition">
+          Erogram
         </Link>
 
         {/* Desktop Navigation */}
@@ -31,19 +31,26 @@ export default function Header() {
           <Link href="/articles" className="text-sm hover:text-primary transition">
             Articles
           </Link>
-          <Link href="/add" className="text-sm hover:text-primary transition">
-            Add
+        </div>
+
+        {/* Right side buttons */}
+        <div className="hidden md:flex items-center gap-4">
+          <Link
+            href="/add"
+            className="bg-primary hover:bg-pink-600 text-white px-4 py-2 rounded font-bold transition text-sm"
+          >
+            + Add
           </Link>
           <Link href="/login" className="text-sm hover:text-primary transition">
             Login
           </Link>
-          <button className="text-sm">🇺🇸</button>
+          <button className="text-sm hover:text-primary transition">🇺🇸 ▾</button>
         </div>
 
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="md:hidden text-primary hover:text-green-400 transition"
+          className="md:hidden text-primary hover:text-pink-400 transition"
         >
           ☰
         </button>
@@ -51,7 +58,7 @@ export default function Header() {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden bg-secondary border-t border-gray-800 py-4 px-4 space-y-3">
+        <div className="md:hidden bg-dark-bg border-t border-gray-800 py-4 px-4 space-y-3">
           <Link href="/groups" className="block text-sm hover:text-primary transition">
             Groups
           </Link>
@@ -68,7 +75,7 @@ export default function Header() {
             Articles
           </Link>
           <Link href="/add" className="block text-sm hover:text-primary transition">
-            Add
+            + Add
           </Link>
           <Link href="/login" className="block text-sm hover:text-primary transition">
             Login
