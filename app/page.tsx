@@ -6,7 +6,7 @@ import { getChannels } from '@/lib/supabase';
 export const revalidate = 3600; // ISR: revalidate every hour
 
 export default async function HomePage() {
-  let channels = [];
+  let channels: any[] = [];
   try {
     channels = await getChannels(8);
   } catch (error) {
