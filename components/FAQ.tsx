@@ -41,24 +41,26 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="max-w-4xl mx-auto px-4 py-12">
-      <h2 className="text-3xl font-bold text-white mb-8 text-center">
+    <section className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+      <h2 className="text-4xl sm:text-5xl font-black text-white mb-12 text-center">
         Frequently Asked Questions
       </h2>
 
-      <div className="space-y-3">
+      <div className="space-y-3 sm:space-y-4">
         {faqs.map((faq, index) => (
           <details
             key={index}
-            className="bg-dark-bg border border-gray-700 rounded-lg overflow-hidden cursor-pointer hover:border-primary transition"
+            className="glass rounded-2xl overflow-hidden cursor-pointer hover:border-pink-500/30 border border-white/10 transition-all duration-300 group backdrop-blur-xl"
             open={openIndex === index}
             onClick={() => setOpenIndex(openIndex === index ? null : index)}
           >
-            <summary className="px-6 py-4 font-semibold text-white hover:text-primary transition flex items-center justify-between">
-              <span>{faq.question}</span>
-              <span className="text-primary">{openIndex === index ? '−' : '+'}</span>
+            <summary className="px-6 sm:px-8 py-4 sm:py-5 font-bold text-white hover:text-transparent hover:bg-gradient-to-r hover:from-pink-400 hover:to-cyan-400 hover:bg-clip-text transition-all duration-300 flex items-center justify-between cursor-pointer select-none">
+              <span className="text-left">{faq.question}</span>
+              <span className="text-pink-400 group-hover:text-pink-300 transition-colors duration-300 text-xl flex-shrink-0 ml-4">
+                {openIndex === index ? '−' : '+'}
+              </span>
             </summary>
-            <div className="px-6 pb-4 text-gray-300 border-t border-gray-700">
+            <div className="px-6 sm:px-8 pb-4 sm:pb-5 text-gray-300 border-t border-white/5 leading-relaxed">
               {faq.answer}
             </div>
           </details>
