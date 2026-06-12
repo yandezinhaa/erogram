@@ -1,126 +1,81 @@
+'use client';
+
 import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0a0a0a] border-t border-white/5 pt-16 pb-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
-          {/* Logo and Description */}
-          <div className="col-span-2 md:col-span-1">
-            <div className="mb-3 flex items-center gap-2">
-              <h3 className="text-2xl font-black bg-gradient-to-r from-white via-pink-400 to-cyan-400 bg-clip-text text-transparent">
-                Erogram
-              </h3>
-            </div>
-            <p className="text-[#666] text-sm leading-relaxed mb-4">
-              The #1 NSFW & Porn Telegram and AI Directory. Discover the best communities and bots.
+    <footer className="relative z-10 border-t border-white/5 mt-20 sm:mt-40 bg-[#0a0a0a]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          {/* Brand & About */}
+          <div className="space-y-6">
+            <Link href="/" className="block">
+              <span className="text-2xl font-black tracking-tighter text-white">
+                ero<span className="text-[#b31b1b]">gram</span>
+              </span>
+            </Link>
+            <p className="text-[#999] leading-relaxed">
+              The #1 Porn & NSFW Telegram Directory.<br />
+              Connect, explore, and indulge — safely and anonymously.
             </p>
-            <a
-              href="https://t.me/erogram"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-[#0ea5e9] text-sm font-medium hover:opacity-80 transition-opacity"
-            >
-              <svg
-                fill="currentColor"
-                height="16"
-                viewBox="0 0 24 24"
-                width="16"
+            <div className="flex items-center gap-4">
+              <a 
+                href="https://t.me/erogrampro" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#229ED9] hover:text-white transition-all duration-300 text-[#999]"
+                aria-label="Telegram"
               >
-                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-2.02 9.532c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L6.21 14.238l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.606.348z" />
-              </svg>
-              Telegram
-            </a>
+                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                  <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 11.944 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
+                </svg>
+              </a>
+            </div>
           </div>
 
-          {/* Directory */}
+          {/* Discover Links */}
           <div>
-            <h4 className="text-white font-bold mb-4 text-sm uppercase tracking-wider">
-              Directory
-            </h4>
-            <ul className="space-y-2 text-[#999] text-sm">
-              <li>
-                <Link href="/groups" className="hover:text-white transition-colors">
-                  Telegram Groups
-                </Link>
-              </li>
-              <li>
-                <Link href="/bots" className="hover:text-white transition-colors">
-                  Telegram Bots
-                </Link>
-              </li>
-              <li>
-                <Link href="/ainsfw" className="hover:text-white transition-colors">
-                  AI NSFW Tools
-                </Link>
-              </li>
-              <li>
-                <Link href="/onlyfanssearch" className="hover:text-white transition-colors">
-                  OnlyFans Search
-                </Link>
-              </li>
-              <li>
-                <Link href="/articles" className="hover:text-white transition-colors">
-                  Articles & Guides
-                </Link>
-              </li>
+            <h3 className="text-white font-bold mb-6">Discover</h3>
+            <ul className="space-y-4">
+              <li><Link href="/bots" className="text-[#999] hover:text-[#b31b1b] transition-colors">Telegram Bots</Link></li>
+              <li><Link href="/best-telegram-groups" className="text-[#999] hover:text-[#b31b1b] transition-colors">Telegram Groups</Link></li>
+              <li><Link href="/onlyfanssearch" className="text-[#999] hover:text-[#b31b1b] transition-colors">OnlyFans Search</Link></li>
+              <li><Link href="/ainsfw" className="text-[#999] hover:text-[#b31b1b] transition-colors">AI NSFW Tools</Link></li>
+              <li><Link href="/articles" className="text-[#999] hover:text-[#b31b1b] transition-colors">Articles & Guides</Link></li>
             </ul>
           </div>
 
-          {/* Advertise */}
+          {/* Advertise Links */}
           <div>
-            <h4 className="text-white font-bold mb-4 text-sm uppercase tracking-wider">
-              Advertise
-            </h4>
-            <ul className="space-y-2 text-[#999] text-sm">
-              <li>
-                <Link href="/add" className="hover:text-white transition-colors">
-                  Get Listed
-                </Link>
-              </li>
-              <li>
-                <Link href="/advertise" className="hover:text-white transition-colors">
-                  Advertise
-                </Link>
-              </li>
+            <h3 className="text-white font-bold mb-6">Advertise</h3>
+            <ul className="space-y-4">
+              <li><Link href="/add" className="text-[#999] hover:text-[#b31b1b] transition-colors">Get Listed on Erogram</Link></li>
             </ul>
           </div>
 
-          {/* Support */}
+          {/* Contact Links */}
           <div>
-            <h4 className="text-white font-bold mb-4 text-sm uppercase tracking-wider">
-              Support
-            </h4>
-            <ul className="space-y-2 text-[#999] text-sm">
-              <li>
-                <Link href="/contact" className="hover:text-white transition-colors">
-                  Contact Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/privacy" className="hover:text-white transition-colors">
-                  Privacy Policy
-                </Link>
-              </li>
+            <h3 className="text-white font-bold mb-6">Contact</h3>
+            <ul className="space-y-4">
+              <li><Link href="/contact" className="text-[#999] hover:text-[#b31b1b] transition-colors">Contact & Support</Link></li>
             </ul>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-[#444] text-xs">
-            © Erogram 2026. All rights reserved. For adults 18+ only.
-          </p>
-          <div className="flex items-center gap-4">
-            <a
-              href="https://www.rtalabel.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-2 py-1 border border-[#444] text-[#444] text-[10px] font-bold rounded hover:border-[#666] hover:text-[#666] transition-colors"
-            >
-              RTA ®
-            </a>
+        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-center items-center gap-4">
+          <div className="text-[#666] text-sm">
+            © Erogram.pro 2026
           </div>
+          <a 
+            href="https://www.rtalabel.org/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-baseline bg-black rounded px-3 py-1.5 gap-0.5 no-underline border border-white/10"
+          >
+            <span className="text-white font-black text-lg tracking-wide leading-none">RTA</span>
+            <span className="text-white text-[9px] -top-2 font-bold leading-none relative">®</span>
+          </a>
         </div>
       </div>
     </footer>

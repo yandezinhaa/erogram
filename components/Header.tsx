@@ -7,306 +7,132 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header
-      style={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        padding: '16px 32px',
-        backgroundColor: '#0d0d0f',
-        borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
-        position: 'sticky',
-        top: 0,
-        zIndex: 40,
-      }}
-    >
-      {/* Logo */}
-      <Link
-        href="/"
-        style={{
-          fontSize: '18px',
-          fontWeight: 700,
-          color: '#f0f0f5',
-          textDecoration: 'none',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '8px',
-          letterSpacing: '-0.5px',
-        }}
-      >
-        <span
-          style={{
-            width: '28px',
-            height: '28px',
-            borderRadius: '4px',
-            background: 'linear-gradient(135deg, #0ea5e9 0%, #0ea5e9 100%)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            color: '#fff',
-            fontSize: '16px',
-            fontWeight: 'bold',
-          }}
-        >
-          E
-        </span>
-        <span>
-          Groups<span style={{ color: '#e8356d' }}>Porn</span>
-        </span>
-      </Link>
-
-      {/* Desktop Navigation */}
-      <nav
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: '20px',
-          marginLeft: 'auto',
-          flexShrink: 0,
-        }}
-      >
-        {/* Groups Link */}
-        <Link
-          href="/groups"
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '6px',
-            color: '#0ea5e9',
-            textDecoration: 'none',
-            fontSize: '14px',
-            fontWeight: 500,
-            transition: 'opacity 0.2s',
-          }}
-        >
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-          >
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-          </svg>
-          Groups
+    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/[0.06] bg-[#0d0d0d]/95 backdrop-blur-md">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex justify-between items-center">
+        {/* Logo */}
+        <Link href="/" className="flex-shrink-0">
+          <span className="text-xl font-bold">
+            <span className="text-white">ERO</span>
+            <span className="text-red-500">gram</span>
+          </span>
         </Link>
 
-        {/* Bots Link */}
-        <Link
-          href="/bots"
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '6px',
-            color: '#0ea5e9',
-            textDecoration: 'none',
-            fontSize: '14px',
-            fontWeight: 500,
-            transition: 'opacity 0.2s',
-          }}
-        >
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex items-center gap-1.5 lg:gap-2">
+          {/* Groups */}
+          <Link 
+            href="/groups" 
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[13px] font-semibold text-[#4ab3f4] bg-[#0088cc]/[0.10] border border-[#0088cc]/25 hover:bg-[#0088cc]/[0.18] hover:text-[#6ec6f7] transition-all whitespace-nowrap"
           >
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-          </svg>
-          Bots
-        </Link>
+            <svg className="shrink-0 opacity-80" fill="currentColor" height="13" viewBox="0 0 24 24" width="13">
+              <path d="M20.665 3.717l-17.73 6.837c-1.21.486-1.203 1.161-.222 1.462l4.552 1.42 10.532-6.645c.498-.303.953-.14.579.192l-8.533 7.701h-.002l.002.001-.314 4.692c.46 0 .663-.211.921-.46l2.211-2.15 4.599 3.397c.848.467 1.457.227 1.668-.785l3.019-14.228c.309-1.239-.473-1.8-1.282-1.434z"></path>
+            </svg>
+            Groups
+          </Link>
 
-        {/* AI NSFW Link */}
-        <Link
-          href="/ainsfw"
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '6px',
-            color: '#0ea5e9',
-            textDecoration: 'none',
-            fontSize: '14px',
-            fontWeight: 500,
-            transition: 'opacity 0.2s',
-          }}
-        >
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
+          {/* Bots */}
+          <Link 
+            href="/bots" 
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[13px] font-semibold text-[#4ab3f4] bg-[#0088cc]/[0.10] border border-[#0088cc]/25 hover:bg-[#0088cc]/[0.18] hover:text-[#6ec6f7] transition-all whitespace-nowrap"
           >
-            <circle cx="12" cy="12" r="1"></circle>
-            <circle cx="19" cy="5" r="1"></circle>
-            <circle cx="5" cy="19" r="1"></circle>
-          </svg>
-          AI NSFW
-        </Link>
+            <svg className="shrink-0 opacity-80" fill="none" height="13" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="13">
+              <rect height="10" rx="2" width="18" x="3" y="11"></rect>
+              <circle cx="9" cy="16" r="1"></circle>
+              <circle cx="15" cy="16" r="1"></circle>
+              <path d="M8 11V7a4 4 0 0 1 8 0v4"></path>
+            </svg>
+            Bots
+          </Link>
 
-        {/* OFsearch Button */}
-        <Link
-          href="/onlyfanssearch"
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '6px',
-            background: '#ffffff',
-            color: '#0d0d0f',
-            padding: '6px 16px',
-            borderRadius: '20px',
-            fontWeight: 600,
-            fontSize: '14px',
-            textDecoration: 'none',
-            flexShrink: 0,
-            transition: 'opacity 0.2s',
-          }}
-        >
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
+          {/* AI NSFW */}
+          <Link 
+            href="/ainsfw" 
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[13px] font-semibold text-[#4ab3f4] bg-[#0088cc]/[0.10] border border-[#0088cc]/25 hover:bg-[#0088cc]/[0.18] hover:text-[#6ec6f7] transition-all whitespace-nowrap"
           >
-            <circle cx="11" cy="11" r="8"></circle>
-            <path d="m21 21-4.35-4.35"></path>
-          </svg>
-          OFsearch
-        </Link>
+            <span className="shrink-0 opacity-80 text-[13px]">🔞</span>
+            AI NSFW
+          </Link>
 
-        {/* Articles Link */}
-        <Link
-          href="/#articles"
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '6px',
-            color: '#0ea5e9',
-            textDecoration: 'none',
-            fontSize: '14px',
-            fontWeight: 500,
-            transition: 'opacity 0.2s',
-          }}
-        >
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
+          {/* OFsearch */}
+          <Link 
+            href="/onlyfanssearch" 
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[13px] font-semibold bg-white text-black border border-white hover:bg-white/90 transition-all whitespace-nowrap"
           >
-            <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
-            <polyline points="13 2 13 9 20 9"></polyline>
-          </svg>
-          Articles
-        </Link>
+            <svg className="shrink-0 opacity-80" fill="none" height="13" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="13">
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.35-4.35"></path>
+            </svg>
+            OFsearch
+          </Link>
 
-        {/* Add Button */}
-        <Link
-          href="/add"
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '6px',
-            background: '#e8356d',
-            color: '#fff',
-            padding: '6px 16px',
-            borderRadius: '6px',
-            fontWeight: 600,
-            fontSize: '14px',
-            textDecoration: 'none',
-            transition: 'opacity 0.2s',
-          }}
-        >
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
+          <div className="w-px h-4 bg-white/10 mx-1"></div>
+
+          {/* Articles */}
+          <Link 
+            href="/articles" 
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[13px] font-medium text-white/70 hover:text-white hover:bg-white/5 transition-all whitespace-nowrap"
           >
-            <line x1="12" y1="5" x2="12" y2="19"></line>
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-          </svg>
-          Add
-        </Link>
+            <svg className="shrink-0 opacity-60" fill="none" height="13" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="13">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" x2="8" y1="13" y2="13"></line>
+              <line x1="16" x2="8" y1="17" y2="17"></line>
+              <line x1="10" x2="8" y1="9" y2="9"></line>
+            </svg>
+            Articles
+          </Link>
 
-        {/* Login Button */}
-        <Link
-          href="/login"
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '6px',
-            color: '#0ea5e9',
-            fontSize: '14px',
-            textDecoration: 'none',
-            fontWeight: 500,
-            transition: 'opacity 0.2s',
-          }}
-        >
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
+          {/* Add */}
+          <Link 
+            href="/add" 
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[13px] font-bold bg-[#b31b1b] text-white border border-[#b31b1b]/20 hover:bg-[#b31b1b]/90 transition-all whitespace-nowrap"
           >
-            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
-            <polyline points="10 17 15 12 10 7"></polyline>
-            <line x1="15" y1="12" x2="3" y2="12"></line>
-          </svg>
-          Login
-        </Link>
+            <svg className="shrink-0" fill="none" height="13" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" viewBox="0 0 24 24" width="13">
+              <line x1="12" x2="12" y1="5" y2="19"></line>
+              <line x1="5" x2="19" y1="12" y2="12"></line>
+            </svg>
+            Add
+          </Link>
 
-        {/* Language Selector */}
-        <button
-          style={{
-            background: 'none',
-            border: 'none',
-            cursor: 'pointer',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '4px',
-            fontSize: '16px',
-            padding: '0',
-            color: '#0ea5e9',
-            fontWeight: 500,
-            transition: 'opacity 0.2s',
-          }}
-        >
-          US <span style={{ fontSize: '12px' }}>▾</span>
-        </button>
+          {/* Login */}
+          <Link 
+            href="/login" 
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[13px] font-semibold text-[#4ab3f4] bg-[#0088cc]/[0.10] border border-[#0088cc]/25 hover:bg-[#0088cc]/[0.18] hover:text-[#6ec6f7] transition-all whitespace-nowrap"
+          >
+            Login
+          </Link>
+
+          {/* Language Selector */}
+          <button className="flex items-center gap-1.5 px-2 py-1.5 rounded-lg text-[15px] hover:bg-white/5 transition-colors">
+            🇺🇸
+          </button>
+        </div>
 
         {/* Mobile Menu Button */}
-        <button
+        <button 
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label="Toggle menu"
-          style={{
-            background: 'none',
-            border: 'none',
-            color: '#f0f0f5',
-            cursor: 'pointer',
-            padding: '0',
-            display: 'flex',
-            alignItems: 'center',
-            fontSize: '24px',
-          }}
+          className="md:hidden p-2 text-white/70 hover:text-white transition-colors"
         >
-          ☰
+          <svg fill="none" height="24" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="24">
+            <line x1="3" x2="21" y1="12" y2="12"></line>
+            <line x1="3" x2="21" y1="6" y2="6"></line>
+            <line x1="3" x2="21" y1="18" y2="18"></line>
+          </svg>
         </button>
-      </nav>
-    </header>
+      </div>
+
+      {/* Mobile Menu Overlay */}
+      {isMenuOpen && (
+        <div className="md:hidden absolute top-full left-0 right-0 bg-[#0d0d0d] border-b border-white/[0.06] p-4 flex flex-col gap-3">
+          <Link href="/groups" className="text-white py-2 border-b border-white/5">Groups</Link>
+          <Link href="/bots" className="text-white py-2 border-b border-white/5">Bots</Link>
+          <Link href="/ainsfw" className="text-white py-2 border-b border-white/5">AI NSFW</Link>
+          <Link href="/onlyfanssearch" className="text-white py-2 border-b border-white/5">OFsearch</Link>
+          <Link href="/articles" className="text-white py-2 border-b border-white/5">Articles</Link>
+          <Link href="/add" className="text-red-500 py-2 font-bold">Add</Link>
+          <Link href="/login" className="text-blue-400 py-2">Login</Link>
+        </div>
+      )}
+    </nav>
   );
 }

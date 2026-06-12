@@ -7,19 +7,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#ff1493', // Pink/Magenta
-        secondary: '#0f0f1e', // Dark background
-        accent: '#00d4ff', // Cyan
-        dark: '#0a0a0a',
-        'dark-bg': '#1a1a2e',
-      },
-      fontFamily: {
-        sans: ['system-ui', 'sans-serif'],
-      },
-      spacing: {
-        safe: 'max(1rem, env(safe-area-inset-bottom))',
+        'erogram-red': '#b31b1b',
+        'erogram-dark': '#0a0a0a',
+        'erogram-header': '#0d0d0d',
+        'erogram-blue': '#0088cc',
+        'erogram-blue-text': '#4ab3f4',
       },
     },
   },
   plugins: [],
-};
+}
