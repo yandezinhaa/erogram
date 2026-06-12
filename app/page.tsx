@@ -1,159 +1,328 @@
 import Link from 'next/link';
-import ChannelCard from '@/components/ChannelCard';
-import FAQ from '@/components/FAQ';
-import { getChannels } from '@/lib/supabase';
 
 export const revalidate = 3600;
 
 export default async function HomePage() {
-  let channels: any[] = [];
-  try {
-    channels = await getChannels(8);
-  } catch (error) {
-    console.error('Error fetching channels:', error);
-  }
-
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-gray-950 to-black">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden py-16 sm:py-24 px-4 text-center">
-        {/* Background effects */}
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-pink-600/20 rounded-full blur-3xl opacity-50" />
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-600/20 rounded-full blur-3xl opacity-50" />
+    <div style={{ minHeight: '100vh', background: '#0a0a0a' }}>
+      {/* Breadcrumb/Tagline */}
+      <div
+        style={{
+          textAlign: 'center',
+          paddingTop: '32px',
+          paddingBottom: '16px',
+        }}
+      >
+        <div
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '8px',
+            background: 'rgba(232, 53, 109, 0.1)',
+            border: '1px solid rgba(232, 53, 109, 0.2)',
+            padding: '8px 16px',
+            borderRadius: '20px',
+            fontSize: '13px',
+            color: '#e8356d',
+          }}
+        >
+          <span style={{ fontSize: '10px' }}>●</span>
+          The #1 NSFW & Porn Telegram and AI Directory
         </div>
+      </div>
 
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black mb-4 leading-tight">
-            <span className="text-white">The #1 NSFW & Porn</span>
-            <br />
-            <span className="bg-gradient-to-r from-pink-500 via-pink-400 to-pink-600 bg-clip-text text-transparent">Telegram and AI</span>
-            <br />
-            <span className="text-white">Directory</span>
-          </h1>
+      {/* Hero Section */}
+      <section
+        style={{
+          textAlign: 'center',
+          paddingTop: '32px',
+          paddingBottom: '64px',
+          paddingLeft: '20px',
+          paddingRight: '20px',
+        }}
+      >
+        <h1
+          style={{
+            fontSize: '72px',
+            fontWeight: 800,
+            lineHeight: 1.1,
+            marginBottom: '24px',
+            color: '#ffffff',
+            maxWidth: '1000px',
+            margin: '0 auto 24px',
+            letterSpacing: '-1px',
+          }}
+        >
+          Discover NSFW & Porn{' '}
+          <span style={{ color: '#e8356d' }}>Telegram groups, bots & AI</span>
+        </h1>
 
-          <h2 className="text-xl sm:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Your #1 hub for NSFW Telegram groups & bots, AI companions & tools, and 1.8M+ OnlyFans creators. Explore and save your favorites all in one place.
-          </h2>
+        <p
+          style={{
+            fontSize: '18px',
+            color: '#999999',
+            marginBottom: '48px',
+            maxWidth: '800px',
+            margin: '0 auto 48px',
+            lineHeight: 1.6,
+          }}
+        >
+          Your #1 hub for NSFW Telegram groups & bots, AI companions & tools,
+          and 1.8M+ OnlyFans creators. Explore and save your favorites all in
+          one place.
+        </p>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 flex-wrap">
+        {/* CTA Buttons */}
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: '16px',
+            maxWidth: '800px',
+            margin: '0 auto',
+          }}
+        >
+          {/* Top 3 Buttons */}
+          <div
+            style={{
+              display: 'flex',
+              gap: '16px',
+              justifyContent: 'center',
+              flexWrap: 'wrap',
+            }}
+          >
             <Link
               href="/groups"
-              className="bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-400 hover:to-cyan-500 text-black px-8 py-3.5 rounded-lg font-bold transition-all duration-300 inline-flex items-center justify-center gap-2 shadow-lg shadow-cyan-500/40 hover:shadow-cyan-500/60 hover:scale-105 active:scale-95"
+              style={{
+                background: '#0ea5e9',
+                color: '#ffffff',
+                padding: '12px 32px',
+                borderRadius: '8px',
+                fontWeight: 700,
+                fontSize: '15px',
+                textDecoration: 'none',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                transition: 'opacity 0.2s',
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.9')}
+              onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
             >
-              📱 Explore Groups
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2m-3 7h3m-3 4h3"></path>
+              </svg>
+              Explore Groups
             </Link>
+
             <Link
               href="/bots"
-              className="bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-400 hover:to-cyan-500 text-black px-8 py-3.5 rounded-lg font-bold transition-all duration-300 inline-flex items-center justify-center gap-2 shadow-lg shadow-cyan-500/40 hover:shadow-cyan-500/60 hover:scale-105 active:scale-95"
+              style={{
+                background: '#0ea5e9',
+                color: '#ffffff',
+                padding: '12px 32px',
+                borderRadius: '8px',
+                fontWeight: 700,
+                fontSize: '15px',
+                textDecoration: 'none',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                transition: 'opacity 0.2s',
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.9')}
+              onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
             >
-              🤖 Explore Bots
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+              Explore Bots
             </Link>
+
             <Link
               href="/ainsfw"
-              className="bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-400 hover:to-cyan-500 text-black px-8 py-3.5 rounded-lg font-bold transition-all duration-300 inline-flex items-center justify-center gap-2 shadow-lg shadow-cyan-500/40 hover:shadow-cyan-500/60 hover:scale-105 active:scale-95"
+              style={{
+                background: '#0ea5e9',
+                color: '#ffffff',
+                padding: '12px 32px',
+                borderRadius: '8px',
+                fontWeight: 700,
+                fontSize: '15px',
+                textDecoration: 'none',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                transition: 'opacity 0.2s',
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.9')}
+              onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
             >
-              🔞 Explore AI NSFW
-            </Link>
-            <Link
-              href="/onlyfanssearch"
-              className="bg-gradient-to-r from-pink-600 to-pink-700 hover:from-pink-500 hover:to-pink-600 text-white px-8 py-3.5 rounded-lg font-bold transition-all duration-300 inline-flex items-center justify-center gap-2 shadow-lg shadow-pink-600/40 hover:shadow-pink-600/60 hover:scale-105 active:scale-95"
-            >
-              ONLYFANS SEARCH +1.8M
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <circle cx="12" cy="12" r="1"></circle>
+                <circle cx="19" cy="5" r="1"></circle>
+                <circle cx="5" cy="19" r="1"></circle>
+              </svg>
+              Explore AI NSFW
             </Link>
           </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 max-w-3xl mx-auto">
-            <div className="glass rounded-2xl p-4 sm:p-6 border border-white/10 hover:border-pink-500/30 transition-all duration-300 backdrop-blur-xl">
-              <div className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-pink-400 to-pink-600 bg-clip-text text-transparent">+5K</div>
-              <div className="text-xs sm:text-sm text-gray-400 uppercase tracking-wider font-bold mt-2">Groups</div>
-            </div>
-            <div className="glass rounded-2xl p-4 sm:p-6 border border-white/10 hover:border-cyan-500/30 transition-all duration-300 backdrop-blur-xl">
-              <div className="text-3xl sm:text-4xl font-black text-cyan-400">0</div>
-              <div className="text-xs sm:text-sm text-gray-400 uppercase tracking-wider font-bold mt-2">Visiting</div>
-            </div>
-            <div className="glass rounded-2xl p-4 sm:p-6 border border-white/10 hover:border-pink-500/30 transition-all duration-300 backdrop-blur-xl">
-              <div className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-pink-400 to-pink-600 bg-clip-text text-transparent">4.9M</div>
-              <div className="text-xs sm:text-sm text-gray-400 uppercase tracking-wider font-bold mt-2">Views</div>
-            </div>
-            <div className="glass rounded-2xl p-4 sm:p-6 border border-white/10 hover:border-cyan-500/30 transition-all duration-300 backdrop-blur-xl">
-              <div className="text-3xl sm:text-4xl font-black text-cyan-400">+1.8M</div>
-              <div className="text-xs sm:text-sm text-gray-400 uppercase tracking-wider font-bold mt-2">OnlyFans</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Fresh New Additions Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 gap-4">
-          <h2 className="text-4xl sm:text-5xl font-black">
-            <span className="text-white">Fresh </span>
-            <span className="bg-gradient-to-r from-pink-500 to-pink-600 bg-clip-text text-transparent">New Additions</span>
-          </h2>
-          <Link href="/groups" className="text-cyan-400 hover:text-cyan-300 transition-colors duration-300 text-sm font-bold whitespace-nowrap">
-            Browse All Groups →
+          {/* Large Pink Button */}
+          <Link
+            href="/onlyfanssearch"
+            style={{
+              background: '#e8356d',
+              color: '#ffffff',
+              padding: '14px 48px',
+              borderRadius: '8px',
+              fontWeight: 700,
+              fontSize: '16px',
+              textDecoration: 'none',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px',
+              transition: 'opacity 0.2s',
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.9')}
+            onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
+          >
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.35-4.35"></path>
+            </svg>
+            ONLYFANS SEARCH +1.8M
           </Link>
         </div>
 
-        <p className="text-gray-400 text-sm mb-8 font-medium">The latest groups added to Erogram — updated daily</p>
-
-        {channels.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-            {channels.map((channel) => (
-              <ChannelCard key={channel.id} channel={channel} isNew={true} />
-            ))}
-          </div>
-        ) : (
-          <div className="text-center py-16">
-            <p className="text-gray-400 text-lg">No channels available yet. Check back soon!</p>
-          </div>
-        )}
-      </section>
-
-      {/* Curated Top Lists Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
-        <h2 className="text-4xl sm:text-5xl font-black text-white mb-12">Curated Top Lists</h2>
-
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 mb-8">
-          {[
-            { name: 'Amateur', slug: 'amateur' },
-            { name: 'Anime', slug: 'anime' },
-            { name: 'OnlyFans', slug: 'onlyfans' },
-            { name: 'Asian', slug: 'asian' },
-            { name: 'Anal', slug: 'anal' },
-            { name: 'Roleplay', slug: 'roleplay' },
-            { name: 'Fetish', slug: 'fetish' },
-            { name: 'Lesbian', slug: 'lesbian' },
-            { name: 'MILF', slug: 'milf' },
-            { name: 'BDSM', slug: 'bdsm' },
-            { name: 'Cosplay', slug: 'cosplay' },
-          ].map((category) => (
-            <Link
-              key={category.slug}
-              href={`/best-telegram-groups/${category.slug}`}
-              className="glass rounded-2xl p-4 sm:p-6 hover:border-pink-500/50 border border-white/10 transition-all duration-300 text-center group backdrop-blur-xl hover:shadow-2xl hover:shadow-pink-600/20"
+        {/* Stats */}
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
+            gap: '24px',
+            marginTop: '64px',
+            maxWidth: '800px',
+            margin: '64px auto 0',
+          }}
+        >
+          <div style={{ textAlign: 'center' }}>
+            <div
+              style={{
+                fontSize: '32px',
+                fontWeight: 800,
+                color: '#ffffff',
+              }}
             >
-              <h3 className="font-bold text-white mb-1 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-pink-400 group-hover:to-cyan-400 group-hover:bg-clip-text transition-all duration-300">
-                Best {category.name} Groups
-              </h3>
-              <p className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors duration-300">Top 10 Collections</p>
-            </Link>
-          ))}
+              +5K
+            </div>
+            <div
+              style={{
+                fontSize: '12px',
+                color: '#666666',
+                marginTop: '8px',
+                textTransform: 'uppercase',
+                letterSpacing: '1px',
+              }}
+            >
+              Groups
+            </div>
+          </div>
+          <div style={{ textAlign: 'center' }}>
+            <div
+              style={{
+                fontSize: '32px',
+                fontWeight: 800,
+                color: '#0ea5e9',
+              }}
+            >
+              312
+            </div>
+            <div
+              style={{
+                fontSize: '12px',
+                color: '#666666',
+                marginTop: '8px',
+                textTransform: 'uppercase',
+                letterSpacing: '1px',
+              }}
+            >
+              Visiting Now
+            </div>
+          </div>
+          <div style={{ textAlign: 'center' }}>
+            <div
+              style={{
+                fontSize: '32px',
+                fontWeight: 800,
+                color: '#0ea5e9',
+              }}
+            >
+              9,097,995
+            </div>
+            <div
+              style={{
+                fontSize: '12px',
+                color: '#666666',
+                marginTop: '8px',
+                textTransform: 'uppercase',
+                letterSpacing: '1px',
+              }}
+            >
+              Views
+            </div>
+          </div>
+          <div style={{ textAlign: 'center' }}>
+            <div
+              style={{
+                fontSize: '32px',
+                fontWeight: 800,
+                color: '#ffffff',
+              }}
+            >
+              +1.8M
+            </div>
+            <div
+              style={{
+                fontSize: '12px',
+                color: '#666666',
+                marginTop: '8px',
+                textTransform: 'uppercase',
+                letterSpacing: '1px',
+              }}
+            >
+              OnlyFans Creators
+            </div>
+          </div>
         </div>
-
-        <div className="text-center">
-          <Link href="/best-telegram-groups" className="text-cyan-400 hover:text-cyan-300 transition-colors duration-300 font-bold">
-            View all categories →
-          </Link>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="bg-gradient-to-b from-transparent via-pink-600/5 to-transparent py-16 sm:py-20">
-        <FAQ />
       </section>
     </div>
   );
