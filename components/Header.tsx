@@ -78,8 +78,6 @@ export default function Header() {
             fontWeight: 500,
             transition: 'opacity 0.2s',
           }}
-          onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.7')}
-          onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
         >
           <svg
             width="16"
@@ -108,8 +106,6 @@ export default function Header() {
             fontWeight: 500,
             transition: 'opacity 0.2s',
           }}
-          onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.7')}
-          onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
         >
           <svg
             width="16"
@@ -138,8 +134,6 @@ export default function Header() {
             fontWeight: 500,
             transition: 'opacity 0.2s',
           }}
-          onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.7')}
-          onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
         >
           <svg
             width="16"
@@ -173,8 +167,6 @@ export default function Header() {
             flexShrink: 0,
             transition: 'opacity 0.2s',
           }}
-          onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.8')}
-          onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
         >
           <svg
             width="16"
@@ -203,8 +195,6 @@ export default function Header() {
             fontWeight: 500,
             transition: 'opacity 0.2s',
           }}
-          onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.7')}
-          onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
         >
           <svg
             width="16"
@@ -236,8 +226,6 @@ export default function Header() {
             textDecoration: 'none',
             transition: 'opacity 0.2s',
           }}
-          onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.9')}
-          onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
         >
           <svg
             width="16"
@@ -266,8 +254,6 @@ export default function Header() {
             fontWeight: 500,
             transition: 'opacity 0.2s',
           }}
-          onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.7')}
-          onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
         >
           <svg
             width="16"
@@ -299,8 +285,6 @@ export default function Header() {
             fontWeight: 500,
             transition: 'opacity 0.2s',
           }}
-          onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.7')}
-          onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
         >
           US <span style={{ fontSize: '12px' }}>▾</span>
         </button>

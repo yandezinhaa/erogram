@@ -3,7 +3,10 @@ import { createClient } from '@supabase/supabase-js';
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+// Somente cria o cliente se as variáveis estiverem presentes
+export const supabase = supabaseUrl && supabaseAnonKey 
+  ? createClient(supabaseUrl, supabaseAnonKey)
+  : (null as any);
 
 export type Channel = {
   id: string;
@@ -41,6 +44,7 @@ export type Tag = {
 };
 
 export async function getChannels(limit = 20, offset = 0) {
+  if (!supabase) return [];
   const { data, error } = await supabase
     .from('channels')
     .select('*')
@@ -52,6 +56,7 @@ export async function getChannels(limit = 20, offset = 0) {
 }
 
 export async function getChannelsByCategory(categorySlug: string, limit = 20, offset = 0) {
+  if (!supabase) return [];
   const { data, error } = await supabase
     .from('channels')
     .select('*, channel_categories(categories(slug))')
@@ -64,6 +69,7 @@ export async function getChannelsByCategory(categorySlug: string, limit = 20, of
 }
 
 export async function getCategories() {
+  if (!supabase) return [];
   const { data, error } = await supabase
     .from('categories')
     .select('*')
@@ -74,6 +80,7 @@ export async function getCategories() {
 }
 
 export async function getTags() {
+  if (!supabase) return [];
   const { data, error } = await supabase
     .from('tags')
     .select('*')
@@ -84,6 +91,7 @@ export async function getTags() {
 }
 
 export async function searchChannels(query: string, limit = 20) {
+  if (!supabase) return [];
   const { data, error } = await supabase
     .from('channels')
     .select('*')

@@ -107,8 +107,6 @@ export default async function HomePage() {
                 gap: '8px',
                 transition: 'opacity 0.2s',
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.9')}
-              onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
             >
               <svg
                 width="18"
@@ -138,8 +136,6 @@ export default async function HomePage() {
                 gap: '8px',
                 transition: 'opacity 0.2s',
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.9')}
-              onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
             >
               <svg
                 width="18"
@@ -170,8 +166,6 @@ export default async function HomePage() {
                 gap: '8px',
                 transition: 'opacity 0.2s',
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.9')}
-              onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
             >
               <svg
                 width="18"
@@ -205,8 +199,6 @@ export default async function HomePage() {
               gap: '8px',
               transition: 'opacity 0.2s',
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.9')}
-            onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
           >
             <svg
               width="18"
